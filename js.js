@@ -6,15 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
         return
     }
 
-    const words = input.toLowerCase().split(', ');
-    if (words.length < 2) {
-        alert(`Спасибо за «${words[0]}», но может быть есть слова, которые можно обработать?`);
+    const [validWord, ...words] = input.toLowerCase().split(', ');
+
+    if (!words) {
+        alert(`Спасибо за «${validWord}», но может быть есть слова, которые можно обработать?`);
         return
     }
-    const validLetters = getLetters(words[0]);
+    const validLetters = getLetters(validWord);
     let result = ``;
 
-    Array.from(words.slice(1)).forEach(word => {
+    Array.from(words).forEach(word => {
         result += `${word} — ${processWord(word, validLetters)}, `
     });
 
