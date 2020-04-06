@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const words = input.toLowerCase().split(', ');
+    if (words.length < 2) {
+        alert(`Спасибо за «${words[0]}», но может быть есть слова, которые можно обработать?`);
+        return
+    }
     const validLetters = getLetters(words[0]);
     let result = ``;
 
