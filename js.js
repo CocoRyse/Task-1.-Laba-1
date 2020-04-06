@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
 function getLetters(word) {
     let validLetters = {};
 
-    Array.from(word).forEach(letter => {
+    for (let letter of word) {
         if (validLetters[letter]) {
             validLetters[letter] += 1;
         } else {
             validLetters[letter] = 1
         }
-    });
+    }
 
     return validLetters
 }
