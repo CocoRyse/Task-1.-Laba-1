@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const validLetters = getLetters(validWord);
     let result = ``;
 
-    Array.from(words).forEach(word => {
+    words.forEach(word => {
         result += `${word} — ${processWord(word, validLetters)}, `
     });
 
